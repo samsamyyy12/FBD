@@ -26,10 +26,10 @@ public class Endereco {
 			)
       
 	private Long id;
-  private String rua;	
+  	private String rua;	
 	private String cep;
-  private int numero;
-  private String Logradouro;
+	private int numero;
+  	private String Logradouro;
 	
 	
 }
