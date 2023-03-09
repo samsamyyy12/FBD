@@ -64,8 +64,10 @@ public class ControllerEndereco {
 			@RequestBody Endereco enderecoDetails) {
 		Endereco endereco = enderecoRepository.findById(Id).get();
 
-		endereco.setEndereco(employeeDetails.getEndereco());
-		endereco.setNumero(employeeDetails.getNumero());
+		endereco.setRua(enderecoDetails.getRua());
+		endereco.setNumero(enderecoDetails.getNumero());
+		endereco.setLogradouro(enderecoDetails.getLogradouro());
+		endereco.setCep(enderecoDetails.getCep());
 		final Endereco updatedEndereco = enderecoRepository.save(endereco);
 		return ResponseEntity.ok(updatedEndereco);
 	}
