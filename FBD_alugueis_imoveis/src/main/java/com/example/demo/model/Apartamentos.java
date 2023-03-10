@@ -28,7 +28,7 @@ public class Apartamentos {
 			)
 	private Long id;
 	
-	private String endereco;
+	private Endereco endereco;
 	
 	private int numero;
 
@@ -40,11 +40,11 @@ public class Apartamentos {
 		this.id = id;
 	}
 
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 
