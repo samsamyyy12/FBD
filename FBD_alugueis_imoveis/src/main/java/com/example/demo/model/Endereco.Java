@@ -1,8 +1,10 @@
 package com.example.demo.model;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -17,20 +19,25 @@ public class Endereco {
 
 	
 	@Id
-	@GeneratedValue
-	(generator = "tbendereco_generation")
-	@SequenceGenerator(
-			name = "tbendereco_generation",
-			sequenceName = "tbendereco_generration",
-			initialValue = 0
-			
-			)
-      
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	
+	@Column(name = "id", nullable = false)
 	private Long id;
-  	private String rua;	
+	
+	@Column(name = "rua", nullable = false)
+  	private String rua;
+	
+	@Column(name = "cep", nullable = false)
 	private String cep;
+	
+	@Column(name = "numero", nullable = false)
 	private int numero;
+	
+	@Column(name = "logradouro", nullable = false)
   	private String Logradouro;
+	
+	
+
 	public Endereco(Long id, String rua, String cep, int numero, String logradouro) {
 		super();
 		this.id = id;
@@ -39,6 +46,7 @@ public class Endereco {
 		this.numero = numero;
 		Logradouro = logradouro;
 	}
+	
 	public Long getId() {
 		return id;
 	}
